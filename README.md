@@ -2,7 +2,7 @@
 
 A real-time weather art display built using the [Pimoroni Galactic Unicorn](https://shop.pimoroni.com/products/galactic-unicorn) and MicroPython.
 
-This project turns hourly weather data into an abstract **weather tapestry**, visualized on a 53×11 LED grid. Each vertical column represents one hour, and the entire matrix evolves over time to reveal patterns in temperature, cloud cover, wind, and precipitation.
+This project turns hourly **real-time** weather data into an abstract **weather tapestry**, visualized on a 53×11 LED grid. Each vertical column represents one hour, and the entire matrix evolves over time to reveal patterns in temperature, cloud cover, wind, and precipitation.
 
 ## Project Highlights
 
@@ -25,8 +25,8 @@ This project turns hourly weather data into an abstract **weather tapestry**, vi
 
 ## How It Works
 
-1. **Weather Fetch**  
-   Retrieves current hourly data from the [Open-Meteo API](https://open-meteo.com/) using Wi-Fi.
+1. ***Live Weather Fetch**  
+   Retrieves real-time weather conditions from [WeatherAPI.com](https://www.weatherapi.com/) using Wi-Fi.
 
 2. **Data Mapping**  
    Weather values are translated into colors, brightness, and animation logic for the LED matrix.
@@ -64,15 +64,16 @@ weather.py
 map_weather.py
 ```
 
-### 3. Update Wi-Fi
+### 3. Update secrets.py
 
-In `main.py`, replace:
+In `secrets.py`, place:
 
 ```python
-wifi.connect_wifi("YOUR_SSID", "YOUR_PASSWORD")
+WIFI_SSID = "YOUR_SSID"
+WIFI_PASSWORD = "YOUR_PASSWORD"
+API_KEY = "YOUR_API_KEY"
+LOCATION = "Sydney"
 ```
-
-with your credentials.
 
 ### 4. Run
 
