@@ -30,11 +30,11 @@ start_hour = rtc_time.localtime()[3]
 # === Background color function ===
 def get_background_color(hour):
     if 6 <= hour <= 7 or 17 <= hour <= 18:
-        return (80, 60, 20)  # Muted sunrise/sunset
+        return (80, 60, 10)  # Muted sunrise/sunset
     elif 8 <= hour <= 17:
-        return (30, 60, 100)  # Soft, desaturated blue
+        return (30, 60, 50)  # Soft, desaturated blue
     else:
-        return (0, 0, 0)  # Very dim night
+        return (0, 0, 10)  # Very dim night
 
 # === Pre-populate timeline with last 53 hours + now ===
 print("Fetching historical weather...")
