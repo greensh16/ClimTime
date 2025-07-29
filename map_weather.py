@@ -11,6 +11,8 @@ def map_to_column(weather):
     sparkle = weather['precip'] > 0.5
     wind = max(0, min(weather['wind'], 50))
     height = int((wind / 50) * 11)
+    if height < 1:
+        height = 1
 
     for y in range(height):
         px = (
